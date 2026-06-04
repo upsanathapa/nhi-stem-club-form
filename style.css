@@ -157,15 +157,15 @@ body {
 /* Logo Row */
 .logo-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .logo-image-wrap {
-  width: 90px;
+  width: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,7 +179,7 @@ body {
   mix-blend-mode: screen;
 }
 
-.logo-text { text-align: center; }
+.logo-text { text-align: left; }
 
 .logo-name {
   display: block;
