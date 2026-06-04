@@ -169,6 +169,13 @@ body {
   height: 48px;
   filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.5));
 }
+.logo-emblem .logo-image {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.5));
+}
 
 .logo-text { text-align: left; }
 
