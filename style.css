@@ -164,19 +164,10 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.logo-image-wrap {
+.logo-emblem svg {
   width: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: invert(1) hue-rotate(180deg) brightness(1.05) contrast(1.1);
-  mix-blend-mode: screen;
+  height: 48px;
+  filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.5));
 }
 
 .logo-text { text-align: left; }
