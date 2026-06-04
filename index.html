@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NHI STEM Club — Grade 11 Selection Form 2026</title>
+  <meta name="description" content="Apply to join the NHI STEM Club! An exclusive community for Grade 11 innovators, builders, and thinkers passionate about Science, Technology, Engineering, and Mathematics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background particles -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true" id="particles"></div>
+
+  <main class="page-wrapper">
+
+    <!-- ====== HEADER ====== -->
+    <header class="form-header">
+      <div class="header-badge">
+        <span class="badge-icon">⚡</span>
+        <span>Applications Open — 2026 Cohort</span>
+      </div>
+
+      <div class="logo-row">
+        <div class="logo-emblem" aria-hidden="true">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="30,4 56,18 56,42 30,56 4,42 4,18" stroke="url(#hexGrad)" stroke-width="2.5" fill="none"/>
+            <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-weight="700" fill="url(#textGrad)" font-family="Outfit">NH</text>
+            <defs>
+              <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d4ff"/>
+                <stop offset="100%" stop-color="#7c3aed"/>
+              </linearGradient>
+              <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d4ff"/>
+                <stop offset="100%" stop-color="#a78bfa"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">NHI STEM Club</span>
+          <span class="logo-tagline">Innovate · Build · Inspire</span>
+        </div>
+      </div>
+
+      <h1 class="form-title">Grade 11 Selection Form
+        <span class="year-tag">2026</span>
+      </h1>
+
+      <div class="intro-card">
+        <div class="intro-icon" aria-hidden="true">🚀</div>
+        <p class="intro-text">
+          Welcome to the <strong>NHI STEM Club!</strong> We are a community of innovators, builders, and thinkers passionate about Science, Technology, Engineering, and Mathematics. Whether you are into coding, robotics, physics experiments, mathematics competitions, or circuit design, there is a place for you here. Complete this form to apply for our upcoming cohort. <em>Show us your passion and creativity!</em>
+        </p>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-bar-wrap" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Form completion progress" id="progressBarWrap">
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="progress-label" id="progressLabel">0% Complete</span>
+      </div>
+    </header>
+
+    <!-- ====== FORM ====== -->
+    <form id="stemForm" class="stem-form" novalidate>
+
+      <!-- ====== SECTION 1: Personal Info ====== -->
+      <section class="form-section" id="section-personal">
+        <div class="section-header">
+          <div class="section-num" aria-hidden="true">01</div>
+          <div>
+            <h2 class="section-title">Personal &amp; Contact Information</h2>
+            <p class="section-desc">Help us get to know you. All required fields are marked with an asterisk (*).</p>
+          </div>
+        </div>
+
+        <div class="fields-grid">
+
+          <!-- Full Name -->
+          <div class="field-group full-width">
+            <label class="field-label" for="fullName">
+              Full Name <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">👤</span>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                class="field-input"
+                placeholder="e.g. Alex Johnson"
+                required
+                autocomplete="name"
+                aria-errormessage="fullName-error"
+                minlength="2"
+              />
+            </div>
+            <div id="fullName-error" class="error-msg" role="alert">
+              <span aria-hidden="true">⚠</span> Please enter your full name.
+            </div>
+          </div>
+
+          <!-- Contact Number -->
+          <div class="field-group">
+            <label class="field-label" for="contact">
+              Contact Number / WhatsApp <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">📱</span>
+              <input
+                type="tel"
+                id="contact"
+                name="contact"
+                class="field-input"
+                placeholder="e.g. +977 98XXXXXXXX"
+                required
+                autocomplete="tel"
+                aria-errormessage="contact-error"
+              />
+            </div>
+            <div id="contact-error" class="error-msg" role="alert">
+              <span aria-hidden="true">⚠</span> Please enter a valid contact number.
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="field-group">
+            <label class="field-label" for="email">
+              Email Address <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">✉️</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="field-input"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+                aria-errormessage="email-error"
+              />
+            </div>
+            <div id="email-error" class="error-msg" role="alert">
+              <span aria-hidden="true">⚠</span> Please enter a valid email address.
+            </div>
+          </div>
+
+          <!-- Stream/Section -->
+          <div class="field-group full-width">
+            <label class="field-label" for="stream">
+              Grade 11 Section / Stream <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="input-wrap select-wrap">
+              <span class="input-icon" aria-hidden="true">🎓</span>
+              <select
+                id="stream"
+                name="stream"
+                class="field-input field-select"
+                required
+                aria-errormessage="stream-error"
+              >
+                <option value="" disabled selected>— Select your stream —</option>
+                <option value="science-a">Science — Section A</option>
+                <option value="science-b">Science — Section B</option>
+                <option value="science-c">Science — Section C</option>
+                <option value="science-d">Science — Section D</option>
+                <option value="science-e">Science — Section E</option>
+                <option value="other">Other / Not Listed</option>
+              </select>
+              <span class="select-arrow" aria-hidden="true">▾</span>
+            </div>
+            <div id="stream-error" class="error-msg" role="alert">
+              <span aria-hidden="true">⚠</span> Please select your section/stream.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====== SECTION 2: Areas of Interest ====== -->
+      <section class="form-section" id="section-interests">
+        <div class="section-header">
+          <div class="section-num" aria-hidden="true">02</div>
+          <div>
+            <h2 class="section-title">Areas of Interest</h2>
+            <p class="section-desc">Which fields of STEM excite you the most? <strong>Select all that apply.</strong> <span class="required-star" aria-hidden="true">*</span></p>
+          </div>
+        </div>
+
+        <div class="interest-grid" role="group" aria-labelledby="interests-label" aria-required="true">
+          <span id="interests-label" class="sr-only">Select your STEM interests</span>
+
+          <label class="interest-card" id="interest-physics-label">
+            <input type="checkbox" name="interests" value="physics" class="interest-checkbox" id="interest-physics" />
+            <div class="interest-card-inner">
+              <div class="interest-emoji" aria-hidden="true">🔭</div>
+              <strong class="interest-name">Physics &amp; Mechanics</strong>
+              <span class="interest-sub">Experiments · Astronomy · Theories</span>
+            </div>
+            <div class="interest-check-icon" aria-hidden="true">✓</div>
+          </label>
+
+          <label class="interest-card" id="interest-coding-label">
+            <input type="checkbox" name="interests" value="coding" class="interest-checkbox" id="interest-coding" />
+            <div class="interest-card-inner">
+              <div class="interest-emoji" aria-hidden="true">💻</div>
+              <strong class="interest-name">Coding &amp; Software Dev</strong>
+              <span class="interest-sub">Python · Web Dev · Game Engines</span>
+            </div>
+            <div class="interest-check-icon" aria-hidden="true">✓</div>
+          </label>
+
+          <label class="interest-card" id="interest-electronics-label">
+            <input type="checkbox" name="interests" value="electronics" class="interest-checkbox" id="interest-electronics" />
+            <div class="interest-card-inner">
+              <div class="interest-emoji" aria-hidden="true">🤖</div>
+              <strong class="interest-name">Electronics &amp; Robotics</strong>
+              <span class="interest-sub">Arduino · Circuit Design · Hardware</span>
+            </div>
+            <div class="interest-check-icon" aria-hidden="true">✓</div>
+          </label>
+
+          <label class="interest-card" id="interest-math-label">
+            <input type="checkbox" name="interests" value="mathematics" class="interest-checkbox" id="interest-math" />
+            <div class="interest-card-inner">
+              <div class="interest-emoji" aria-hidden="true">📐</div>
+              <strong class="interest-name">Pure &amp; Applied Mathematics</strong>
+              <span class="interest-sub">Olympiads · Problem Solving</span>
+            </div>
+            <div class="interest-check-icon" aria-hidden="true">✓</div>
+          </label>
+
+          <label class="interest-card" id="interest-env-label">
+            <input type="checkbox" name="interests" value="environmental" class="interest-checkbox" id="interest-env" />
+            <div class="interest-card-inner">
+              <div class="interest-emoji" aria-hidden="true">🌱</div>
+              <strong class="interest-name">Environmental Science</strong>
+              <span class="interest-sub">Green Tech · Sustainability · Innovation</span>
+            </div>
+            <div class="interest-check-icon" aria-hidden="true">✓</div>
+          </label>
+
+          <label class="interest-card" id="interest-events-label">
+            <input type="checkbox" name="interests" value="events" class="interest-checkbox" id="interest-events" />
+            <div class="interest-card-inner">
+              <div class="interest-emoji" aria-hidden="true">🎨</div>
+              <strong class="interest-name">Event Management &amp; Design</strong>
+              <span class="interest-sub">Club Logistics · Graphics · Certificates</span>
+            </div>
+            <div class="interest-check-icon" aria-hidden="true">✓</div>
+          </label>
+
+        </div>
+        <div id="interests-error" class="error-msg" role="alert" style="display:none;">
+          <span aria-hidden="true">⚠</span> Please select at least one area of interest.
+        </div>
+      </section>
+
+      <!-- ====== SECTION 3: Skill Assessment ====== -->
+      <section class="form-section" id="section-skills">
+        <div class="section-header">
+          <div class="section-num" aria-hidden="true">03</div>
+          <div>
+            <h2 class="section-title">Skill Assessment &amp; Experience</h2>
+            <p class="section-desc">These questions are <em>optional</em> — every expert was once a beginner!</p>
+          </div>
+        </div>
+
+        <div class="fields-grid">
+
+          <!-- Previous Projects -->
+          <div class="field-group full-width">
+            <label class="field-label" for="projects">
+              Previous STEM Projects
+              <span class="optional-tag">Optional</span>
+            </label>
+            <p class="field-hint">Have you worked on any personal STEM projects before? (e.g., built a website, coded a small game, made a science model, designed electronics, or participated in a math competition?) If yes, please describe it briefly. If no, that's completely fine — just tell us what you are eager to build first!</p>
+            <textarea
+              id="projects"
+              name="projects"
+              class="field-textarea"
+              placeholder="Tell us about your projects, experiments, or what you dream of building..."
+              rows="5"
+            ></textarea>
+          </div>
+
+          <!-- Tools & Languages -->
+          <div class="field-group full-width">
+            <label class="field-label" for="tools">
+              Tools, Languages &amp; Software You Know or Want to Learn
+              <span class="optional-tag">Optional</span>
+            </label>
+            <p class="field-hint">What specific tools, programming languages, software, or hardware tools are you familiar with or interested in learning? (e.g., Python, HTML/CSS, Scratch, Godot, KiCad, Arduino, etc.)</p>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">🛠️</span>
+              <input
+                type="text"
+                id="tools"
+                name="tools"
+                class="field-input"
+                placeholder="e.g. Python, Arduino, Figma, Unity..."
+              />
+            </div>
+
+            <!-- Tag chips for quick selection -->
+            <div class="tool-chips" aria-label="Quick select popular tools">
+              <span class="chip-label">Quick pick:</span>
+              <button type="button" class="chip" data-tool="Python">Python</button>
+              <button type="button" class="chip" data-tool="HTML/CSS">HTML/CSS</button>
+              <button type="button" class="chip" data-tool="Arduino">Arduino</button>
+              <button type="button" class="chip" data-tool="Scratch">Scratch</button>
+              <button type="button" class="chip" data-tool="JavaScript">JavaScript</button>
+              <button type="button" class="chip" data-tool="Godot">Godot</button>
+              <button type="button" class="chip" data-tool="KiCad">KiCad</button>
+              <button type="button" class="chip" data-tool="Figma">Figma</button>
+              <button type="button" class="chip" data-tool="MATLAB">MATLAB</button>
+              <button type="button" class="chip" data-tool="Blender">Blender</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====== SECTION 4: Core Selection Questions ====== -->
+      <section class="form-section" id="section-core">
+        <div class="section-header">
+          <div class="section-num" aria-hidden="true">04</div>
+          <div>
+            <h2 class="section-title">Core Selection Questions</h2>
+            <p class="section-desc">This is where you shine! Take your time and be genuine. All questions are required.</p>
+          </div>
+        </div>
+
+        <div class="fields-grid">
+
+          <!-- Q1: Why Join -->
+          <div class="field-group full-width">
+            <label class="field-label" for="whyJoin">
+              <span class="q-number" aria-hidden="true">Q1</span>
+              Why do you want to join the NHI STEM Club, and what do you hope to get out of this experience?
+              <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="char-wrap">
+              <textarea
+                id="whyJoin"
+                name="whyJoin"
+                class="field-textarea"
+                placeholder="Share your motivations, goals, and what excites you about being part of this community..."
+                rows="5"
+                required
+                minlength="50"
+                aria-errormessage="whyJoin-error"
+                aria-describedby="whyJoin-count"
+              ></textarea>
+              <span class="char-count" id="whyJoin-count" aria-live="polite">0 / 50 min</span>
+            </div>
+            <div id="whyJoin-error" class="error-msg" role="alert">
+              <span aria-hidden="true">⚠</span> Please provide a thoughtful response (at least 50 characters).
+            </div>
+          </div>
+
+          <!-- Q2: Problem Solving -->
+          <div class="field-group full-width">
+            <label class="field-label" for="problemSolving">
+              <span class="q-number" aria-hidden="true">Q2</span>
+              STEM is all about problem-solving and collaboration. Describe a time you faced a difficult problem (academic or personal) and how you figured out a solution. What did you learn?
+              <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="char-wrap">
+              <textarea
+                id="problemSolving"
+                name="problemSolving"
+                class="field-textarea"
+                placeholder="Walk us through the challenge, your thought process, and the key lesson you took away..."
+                rows="5"
+                required
+                minlength="50"
+                aria-errormessage="problemSolving-error"
+                aria-describedby="problemSolving-count"
+              ></textarea>
+              <span class="char-count" id="problemSolving-count" aria-live="polite">0 / 50 min</span>
+            </div>
+            <div id="problemSolving-error" class="error-msg" role="alert">
+              <span aria-hidden="true">⚠</span> Please provide a thoughtful response (at least 50 characters).
+            </div>
+          </div>
+
+          <!-- Q3: Dream Build -->
+          <div class="field-group full-width">
+            <label class="field-label" for="dreamBuild">
+              <span class="q-number" aria-hidden="true">Q3</span>
+              If you were given a small budget and a week to build or design anything you wanted, what would you create and why?
+              <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="char-wrap">
+              <textarea
+                id="dreamBuild"
+                name="dreamBuild"
+                class="field-textarea"
+                placeholder="Dream big! Describe your vision — the idea, why it matters, and how you'd approach it..."
+                rows="5"
+                required
+                minlength="50"
+                aria-errormessage="dreamBuild-error"
+                aria-describedby="dreamBuild-count"
+              ></textarea>
+              <span class="char-count" id="dreamBuild-count" aria-live="polite">0 / 50 min</span>
+            </div>
+            <div id="dreamBuild-error" class="error-msg" role="alert">
+              <span aria-hidden="true">⚠</span> Please provide a thoughtful response (at least 50 characters).
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====== SUBMIT SECTION ====== -->
+      <section class="form-section submit-section" id="section-submit">
+        <div class="declaration-box">
+          <label class="declaration-label" id="decl-label">
+            <input
+              type="checkbox"
+              id="declaration"
+              name="declaration"
+              required
+              aria-errormessage="decl-error"
+              aria-describedby="decl-label"
+            />
+            <span>I confirm that all information provided is accurate and true. I understand that misrepresentation may disqualify my application.</span>
+          </label>
+          <div id="decl-error" class="error-msg" role="alert">
+            <span aria-hidden="true">⚠</span> Please confirm the declaration to submit.
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="btn-text">Submit Application</span>
+          <span class="btn-icon" aria-hidden="true">🚀</span>
+          <div class="btn-glow" aria-hidden="true"></div>
+        </button>
+
+        <p class="submit-note">Your application will be reviewed by our selection committee. Shortlisted candidates will be contacted for a brief interview session.</p>
+      </section>
+
+    </form>
+
+    <!-- ====== SUCCESS SCREEN ====== -->
+    <div class="success-screen" id="successScreen" hidden>
+      <div class="success-inner">
+        <div class="success-anim" aria-hidden="true">
+          <svg viewBox="0 0 100 100" class="success-circle">
+            <circle cx="50" cy="50" r="45" class="success-ring"/>
+            <path d="M28 50 L44 66 L72 36" class="success-check"/>
+          </svg>
+        </div>
+        <h2 class="success-title">Application Submitted! 🎉</h2>
+        <p class="success-body">
+          Thank you for applying to the <strong>NHI STEM Club!</strong> Your responses have been recorded. Our selection committee will review all applications, and shortlisted candidates will be contacted for a brief interview/interaction session.
+        </p>
+        <p class="success-tagline"><strong>Stay curious. Keep building. 🔬⚡</strong></p>
+        <button type="button" class="reset-btn" id="resetBtn">Submit Another Application</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <p>NHI STEM Club &copy; 2026 &nbsp;·&nbsp; Grade 11 Selection Form &nbsp;·&nbsp; Innovate · Build · Inspire</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
