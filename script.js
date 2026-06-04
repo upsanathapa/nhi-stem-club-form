@@ -18,7 +18,7 @@
     const container = document.getElementById('particles');
     if (!container) return;
 
-    const colors = ['rgba(0,212,255,0.6)', 'rgba(124,58,237,0.5)', 'rgba(16,185,129,0.5)', 'rgba(245,158,11,0.4)'];
+    const colors = ['rgba(255,85,0,0.6)', 'rgba(255,142,83,0.5)', 'rgba(16,185,129,0.5)', 'rgba(245,158,11,0.4)'];
     const count = 18;
 
     for (let i = 0; i < count; i++) {
@@ -222,19 +222,48 @@
         return;
       }
 
-      // Simulate submission (loading state)
+      // Submit form using FormSubmit AJAX
       submitBtn.classList.add('loading');
       submitBtn.disabled = true;
 
-      setTimeout(() => {
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        if (key === 'interests') {
+          if (!data[key]) data[key] = [];
+          data[key].push(value);
+        } else {
+          data[key] = value;
+        }
+      });
+      if (Array.isArray(data.interests)) {
+        data.interests = data.interests.join(', ');
+      }
+
+      fetch("https://formsubmit.co/ajax/upsanathapa6@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(res => {
         form.hidden = true;
         if (successScreen) {
           successScreen.removeAttribute('hidden');
           successScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        alert('There was a problem submitting your application. Please try again.');
+      })
+      .finally(() => {
         submitBtn.classList.remove('loading');
         submitBtn.disabled = false;
-      }, 1200);
+      });
     });
 
     // Reset
@@ -308,7 +337,7 @@
           width: size + 'px',
           height: size + 'px',
           borderRadius: '50%',
-          background: 'rgba(0,212,255,0.15)',
+          background: 'rgba(255,85,0,0.15)',
           left: (e.clientX - rect.left - size / 2) + 'px',
           top: (e.clientY - rect.top - size / 2) + 'px',
           transform: 'scale(0)',
